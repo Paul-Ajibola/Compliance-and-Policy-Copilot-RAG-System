@@ -12,3 +12,5 @@ async def health():
     if not db_ok:
         raise HTTPException(status_code=503, detail="DB connection failed")
     return {"status": "ok", "db": "connected", "environment": settings.environment}
+
+    
