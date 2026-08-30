@@ -10,4 +10,4 @@ wheels/
 .venv
 
 # .env file
-.env
+.env.local
