@@ -24,3 +24,5 @@ async def check_db_connection() -> bool:
     except Exception as e:
         logger.error(f"DB connection checked failed: {e}")
         return False
+
+
