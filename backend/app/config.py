@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
+# class for settings
 class Settings(BaseSettings):
     environment: str = "local"
     database_url: str
@@ -20,3 +20,5 @@ settings = Settings()
 
 # logging
 logger = logging.getLogger(__name__)
+
+
