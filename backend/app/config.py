@@ -22,4 +22,3 @@ settings = Settings()
 # logging
 logger = logging.getLogger(__name__)
 
-
