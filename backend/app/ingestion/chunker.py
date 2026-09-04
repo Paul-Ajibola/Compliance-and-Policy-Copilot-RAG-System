@@ -6,7 +6,7 @@ Turns a ParsedDocument into a list of chunks. Each chunk:
     (never mid-sentence, never mid-table)
 """
 from dataclasses import dataclass, field
-from app.ingestion.parser import ParsedDocument, HeadingEl, ParagraphEl, TableEl
+from app.ingestion.loaders.base import ParsedDocument, HeadingEl, ParagraphEl, TableEl
 
 MAX_CHUNK_CHARS = 1200  # soft target; a chunk may exceed this to keep a table atomic
 

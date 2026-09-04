@@ -1,6 +1,6 @@
 """
-End-to-end ingestion: reads every .docx in a source directory, parses
-structure, chunks it, and writes Document + Chunk rows to Postgres.
+End-to-end ingestion: reads every supported file in a source directory,
+parses structure, chunks it, and writes Document + Chunk rows to Postgres.
 
 Run with:  python -m app.ingestion.ingest data/raw
 """
@@ -8,11 +8,12 @@ import asyncio
 import sys
 from pathlib import Path
 
+from sqlalchemy import select, delete
 from dateutil import parser as date_parser
 
 from app.db.session import AsyncSessionLocal
 from app.db.models import Document, Chunk
-from app.ingestion.parser import parse_docx
+from app.ingestion.loader_registry import get_loader, SUPPORTED_EXTENSIONS
 from app.ingestion.chunker import chunk_document
 
 
@@ -26,10 +27,20 @@ def _parse_effective_date(raw: str | None):
 
 
 async def ingest_file(path: Path) -> int:
-    parsed = parse_docx(str(path))
+    loader = get_loader(path)
+    parsed = loader(str(path))
     chunks = chunk_document(parsed)
 
     async with AsyncSessionLocal() as session:
+        # make this file idempotent
+        existing = await session.execute(
+            select(Document).where(Document.source_path == str(path))
+        )
+        existing_doc = existing.scalar_one_or_none()
+        if existing_doc is not None:
+            await session.delete(existing_doc)
+            await session.flush()
+
         document = Document(
             title=parsed.title or path.stem,
             source_path=str(path),
@@ -59,13 +70,17 @@ async def ingest_file(path: Path) -> int:
 
 async def ingest_directory(dir_path: str):
     source_dir = Path(dir_path)
-    docx_files = sorted(source_dir.glob("*.docx"))
+    all_files = sorted(
+        p for p in source_dir.iterdir()
+        if p.is_file() and p.suffix.lower() in SUPPORTED_EXTENSIONS
+    )
 
-    if not docx_files:
-        print(f"No .docx files found in {source_dir.resolve()}")
+    if not all_files:
+        print(f"No supported files found in {source_dir.resolve()} "
+              f"(looking for: {', '.join(SUPPORTED_EXTENSIONS)})")
         return
 
-    for path in docx_files:
+    for path in all_files:
         count = await ingest_file(path)
         print(f"Ingested {path.name}: {count} chunks")
 
@@ -74,5 +89,3 @@ if __name__ == "__main__":
     target_dir = sys.argv[1] if len(sys.argv) > 1 else "data/raw"
     asyncio.run(ingest_directory(target_dir))
 
-
-    
