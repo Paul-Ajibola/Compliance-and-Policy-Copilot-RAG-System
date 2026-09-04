@@ -1,4 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+import logging
+
 
 # class for settings
 class Settings(BaseSettings):
