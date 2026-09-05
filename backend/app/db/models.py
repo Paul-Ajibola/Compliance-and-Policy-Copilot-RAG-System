@@ -9,7 +9,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 # Placeholder embedding dimensions. Replace with actual if using
 # different model. Using 1536 because that's typical for OpenAI models.
-EMBEDDING_DIM = 1536
+EMBEDDING_DIM = 384     # BAAI/bge-small-en-v1.5
 
 
 class Base(DeclarativeBase):
