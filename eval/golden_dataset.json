@@ -1,17 +1,377 @@
 [
-  {"question": "How long must employee personnel records be retained after termination?", "expected_answer_hint": "7 years post-termination", "source_doc": "Data Retention and Privacy Policy"},
-  {"question": "What is the retention period for customer transaction records?", "expected_answer_hint": "5 years", "source_doc": "Data Retention and Privacy Policy"},
-  {"question": "Within how many days must a data access request be fulfilled?", "expected_answer_hint": "30 calendar days", "source_doc": "Data Retention and Privacy Policy"},
-  {"question": "Who must disclosures about conflicts of interest be submitted to?", "expected_answer_hint": "manager and Human Resources", "source_doc": "Employee Code of Conduct"},
-  {"question": "What happens on a first occurrence of harassment or discrimination?", "expected_answer_hint": "formal investigation; suspension pending outcome", "source_doc": "Employee Code of Conduct"},
-  {"question": "What is the disciplinary consequence for falsifying records?", "expected_answer_hint": "termination", "source_doc": "Employee Code of Conduct"},
-  {"question": "What is the annual equipment stipend for an individual contributor working remotely?", "expected_answer_hint": "$500", "source_doc": "Remote Work Policy"},
-  {"question": "Who must approve equipment purchases for Director-level remote employees?", "expected_answer_hint": "VP", "source_doc": "Remote Work Policy"},
-  {"question": "What security requirement applies to all remote employees' devices?", "expected_answer_hint": "VPN and full-disk encryption", "source_doc": "Remote Work Policy"},
-  {"question": "What contract value requires CFO approval for a vendor?", "expected_answer_hint": "over $100,000", "source_doc": "Vendor Management Policy"},
-  {"question": "What due diligence is required for Tier 2 vendors?", "expected_answer_hint": "standard due-diligence questionnaire at onboarding", "source_doc": "Vendor Management Policy"},
-  {"question": "How much notice is required to terminate a vendor contract for cause?", "expected_answer_hint": "30 days written notice", "source_doc": "Vendor Management Policy"},
-  {"question": "Within how many days of travel must receipts be submitted for reimbursement?", "expected_answer_hint": "14 days", "source_doc": "travel reimbursement notes"},
-  {"question": "What reimbursement amount requires director sign-off?", "expected_answer_hint": "over $500", "source_doc": "travel reimbursement notes"},
-  {"question": "What is required before booking international travel?", "expected_answer_hint": "pre-approval from the VP of the employee's department", "source_doc": "travel reimbursement notes"}
+  {
+    "question": "How long must employee personnel records be retained after termination?",
+    "expected_answer": "7 years post-termination, based on Labor Code §1198.5.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "What is the retention period for customer transaction records?",
+    "expected_answer": "5 years.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "Within how many days must a data access request be fulfilled?",
+    "expected_answer": "Within 30 calendar days of verified receipt.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "What is the retention period and legal basis for employee personnel records?",
+    "expected_answer": "7 years post-termination, based on Labor Code §1198.5.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "How long does the organization have to fulfill a Data Subject Right to Access request?",
+    "expected_answer": "Within 30 calendar days of verified receipt.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "Within what timeframe must suspected policy violations be reported to the Compliance team?",
+    "expected_answer": "Within 48 hours of discovery.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "What is the required retention period and disposal method for security incident reports?",
+    "expected_answer": "10 years retention; disposal via Secure shred / crypto-erase.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "How long must marketing consent logs be retained following withdrawal?",
+    "expected_answer": "3 years post-withdrawal.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "What is the required disposal method for vendor due-diligence files?",
+    "expected_answer": "Secure shred.",
+    "source_doc": "Data Retention and Privacy Policy"
+  },
+  {
+    "question": "Who must disclosures about conflicts of interest be submitted to?",
+    "expected_answer": "Manager and Human Resources prior to engaging in the activity.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What happens on a first occurrence of harassment or discrimination?",
+    "expected_answer": "Formal investigation; suspension pending outcome.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What is the disciplinary consequence for falsifying records?",
+    "expected_answer": "Termination.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "To whom must employees submit conflict of interest disclosures, and when must they be submitted?",
+    "expected_answer": "To the employee's manager and Human Resources prior to engaging in the activity.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What is the standard disciplinary response for a first occurrence of tardiness or attendance issues?",
+    "expected_answer": "Verbal warning.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What standard disciplinary action is required for a first occurrence of falsification of records?",
+    "expected_answer": "Termination.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "Which department must be consulted before any suspension or termination decision is finalized?",
+    "expected_answer": "Human Resources.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What are the three channels through which employees can report a violation of the Code of Conduct?",
+    "expected_answer": "Their manager, Human Resources, or the confidential ethics hotline.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What is the standard disciplinary response for a repeat occurrence of conflict of interest non-disclosure?",
+    "expected_answer": "Suspension.",
+    "source_doc": "Employee Code of Conduct"
+  },
+  {
+    "question": "What is the annual equipment stipend for an individual contributor working remotely?",
+    "expected_answer": "$500.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "Who must approve equipment purchases for Director-level remote employees?",
+    "expected_answer": "VP.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "What security requirement applies to all remote employees' devices?",
+    "expected_answer": "VPN and full-disk encryption.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "How long is the probationary period that full-time employees must complete before becoming eligible for remote work?",
+    "expected_answer": "90-day probationary period.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "What is the annual equipment stipend amount for a Director+ role level?",
+    "expected_answer": "$1,200.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "Whose approval is required for a Senior IC/Lead to receive the annual equipment stipend?",
+    "expected_answer": "Manager.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "What security software must all remote employees use when working remotely?",
+    "expected_answer": "Company-issued VPN software.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "Under what condition are contractors permitted to work remotely?",
+    "expected_answer": "If specified in their statement of work.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "What security measure must be enabled on any device used for work purposes by remote employees?",
+    "expected_answer": "Full-disk encryption.",
+    "source_doc": "Remote Work Policy"
+  },
+  {
+    "question": "What contract value requires CFO approval for a vendor?",
+    "expected_answer": "Over $100,000.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "What due diligence is required for Tier 2 vendors?",
+    "expected_answer": "Standard due-diligence questionnaire at onboarding.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "How much notice is required to terminate a vendor contract for cause?",
+    "expected_answer": "30 days written notice.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "What is the requirement for Tier 1 vendors under the Vendor Risk Tiers section?",
+    "expected_answer": "Annual security audits for vendors with access to sensitive data or critical systems.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "What is required for Tier 2 vendors during onboarding?",
+    "expected_answer": "A standard due-diligence questionnaire.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "Who must approve vendor contracts with a contract value under $10,000?",
+    "expected_answer": "Department Manager.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "Whose approvals are required for contracts valued between $10,000 and $100,000?",
+    "expected_answer": "VP and Procurement.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "Who is the required approver for vendor contracts valued over $100,000?",
+    "expected_answer": "CFO.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "How many days written notice is required to terminate a vendor contract for cause?",
+    "expected_answer": "30 days written notice.",
+    "source_doc": "Vendor Management Policy"
+  },
+  {
+    "question": "Within how many days of travel must receipts be submitted for reimbursement?",
+    "expected_answer": "14 days.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "What reimbursement amount requires director sign-off?",
+    "expected_answer": "Over $500.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "What is required before booking international travel?",
+    "expected_answer": "Pre-approval from the VP of the employee's department.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "Within how many days of travel completion must employees submit their receipts?",
+    "expected_answer": "14 days.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "What dollar threshold requires director sign-off before reimbursement submission to finance?",
+    "expected_answer": "Over $500.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "Whose pre-approval is required for international travel regardless of cost?",
+    "expected_answer": "VP of the employee's department.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "Which department receives reimbursement submissions after any required director sign-off?",
+    "expected_answer": "Finance.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "Is pre-approval required for international travel if the total cost is under $500?",
+    "expected_answer": "Yes, international travel requires VP pre-approval regardless of cost.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "What status does this document currently hold in terms of official company policy?",
+    "expected_answer": "It is a scratch note about a process that has not been formalized into an official policy yet.",
+    "source_doc": "Travel Reimbursement Notes"
+  },
+  {
+    "question": "What is the threshold amount for individual expenses that require detailed itemized receipts?",
+    "expected_answer": "Exceeding $25.00.",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "What is the daily per-diem limit for standard personal meals during business travel, and how is it allocated?",
+    "expected_answer": "$75.00 per day ($15.00 for Breakfast, $20.00 for Lunch, and $40.00 for Dinner).",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "What is the standard mileage reimbursement rate for personal vehicle usage for business travel?",
+    "expected_answer": "$0.67 per mile.",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "Who must approve expense reports between $500.01 and $2,500.00, and what is the processing window?",
+    "expected_answer": "Department Director; 5 Business Days.",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "How far in advance of departure must travel advances be requested, and what is the maximum amount allowed per trip?",
+    "expected_answer": "At least 10 business days prior to departure; max $1,000.00 per trip.",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "How many days suspension of expense reimbursement privileges results from repeated documentation deficiencies during an audit?",
+    "expected_answer": "90 calendar days.",
+    "source_doc": "Corporate Expense Reimbursement Policy"
+  },
+  {
+    "question": "Who is listed as the document owner for the Anti-Bribery and Corruption Policy?",
+    "expected_answer": "Chief Compliance Officer (CCO).",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "What is the monetary threshold for any gift or meal provided to a public official that requires advance written clearance from the CCO?",
+    "expected_answer": "Exceeding $25.00.",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "Within how many hours must emergency payments made under threats to personal safety or physical security be reported to Legal?",
+    "expected_answer": "Within 24 hours.",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "How often must third-party risk profiles be formally reassessed under the due diligence screening requirements?",
+    "expected_answer": "Every 24 months.",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "What is the toll-free phone number provided for the 24/7 Anonymous Compliance Hotline?",
+    "expected_answer": "1-800-555-ETHICS.",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "What maximum criminal fine per violation is cited under federal and international anti-corruption statutes for policy violations?",
+    "expected_answer": "Up to $250,000.",
+    "source_doc": "Anti-Bribery and Corruption Policy"
+  },
+  {
+    "question": "What arc-rating is required for protective clothing worn by data center technicians and electrical maintenance staff near energized hardware exceeding 50 volts?",
+    "expected_answer": "Minimum of 8 cal/cm².",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "How frequently must safety helmets be replaced from their manufacture date?",
+    "expected_answer": "Every 3 years.",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "What is the cumulative use limit before respiratory protective gear filters must be replaced?",
+    "expected_answer": "40 hours.",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "What is the initial notification deadline for a Tier 3 (Lost Time / Restricted Work) safety incident?",
+    "expected_answer": "Within 1 Hour.",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "At what distance from the structure must Primary Assembly Areas be located during an emergency evacuation?",
+    "expected_answer": "At least 150 feet away.",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "How frequently must fire suppression systems, emergency lighting arrays, and AEDs undergo certified technical inspections?",
+    "expected_answer": "Every 90 calendar days.",
+    "source_doc": "Workplace Health and Safety Policy"
+  },
+  {
+    "question": "How often are the credentials for official corporate accounts required to be rotated in the enterprise password vault?",
+    "expected_answer": "Automatically rotated every 45 days.",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "Within how many hours must an employee forward a negative online post or customer complaint screenshot to socialsupport@apexglobal.com?",
+    "expected_answer": "Within 4 hours.",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "How long is the financial blackout period prior to quarterly earnings calls?",
+    "expected_answer": "Exactly 14 days.",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "Within what timeframe must an employee forward a journalist or media inquiry to PR@apexglobal.com?",
+    "expected_answer": "Within 2 hours of initial receipt.",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "Who are the only two individuals authorized to speak to the press during a designated Tier 1 crisis event?",
+    "expected_answer": "Chief Executive Officer (CEO) and Chief Communications Officer (CCO).",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "What is the required sign-off level and minimum review window for an Executive Media Interview?",
+    "expected_answer": "Chief Communications Officer (CCO) with a minimum review window of 7 Business Days.",
+    "source_doc": "Social Media and Public Communications Policy"
+  },
+  {
+    "question": "What are the specific length and complexity requirements for user passwords?",
+    "expected_answer": "Minimum 14 characters, containing at least one uppercase letter, one lowercase letter, one numeric digit, and one special symbol.",
+    "source_doc": "Information Security Policy"
+  },
+  {
+    "question": "How long will an account be locked out after 5 consecutive failed login attempts within a 15-minute window?",
+    "expected_answer": "30 minutes.",
+    "source_doc": "Information Security Policy"
+  },
+  {
+    "question": "What are the retention period and encryption requirements for data classified as Restricted?",
+    "expected_answer": "10 Years retention; encrypted at rest (AES-256) and in transit (TLS 1.3).",
+    "source_doc": "Information Security Policy"
+  },
+  {
+    "question": "Within how many minutes of detection must potential security breaches be reported to the IT Helpdesk?",
+    "expected_answer": "Within 30 minutes of detection.",
+    "source_doc": "Information Security Policy"
+  },
+  {
+    "question": "How long must forensic image files, system log files, and incident records generated during an investigation be retained?",
+    "expected_answer": "Minimum of 36 months.",
+    "source_doc": "Information Security Policy"
+  },
+  {
+    "question": "Within how many calendar days must any non-compliance identified during a security audit be remediated?",
+    "expected_answer": "Within 14 calendar days.",
+    "source_doc": "Information Security Policy"
+  }
 ]
