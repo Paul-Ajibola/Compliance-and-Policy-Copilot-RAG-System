@@ -27,7 +27,7 @@ async def stream_answer(question: str, context_chunks: list[dict]):
     client = get_client()
     prompt = build_prompt(question, context_chunks)
 
-    stream = client.aio.models.generate_content_stream(
+    stream = await client.aio.models.generate_content_stream(
         model=settings.gemini_model,
         contents=prompt,
     )
@@ -51,3 +51,4 @@ def build_citations(context_chunks: list[dict]) -> list[dict]:
             "chunk_type": chunk.get("chunk_type"),
         })
     return citations
+
