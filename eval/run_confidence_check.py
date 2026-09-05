@@ -1,14 +1,10 @@
 """
 Runs every golden-set and trap-set question through the retrieval
 pipeline and prints the top reranked score for each — this is what lets
-you pick CONFIDENCE_THRESHOLD in app/confidence/gate.py based on real
-numbers, rather than guessing blind.
+you actually pick CONFIDENCE_THRESHOLD in gate.py based on real numbers,
+rather than guessing blind.
 
-This script lives in eval/ (repo root), NOT inside backend/app/ — it's
-mounted into the container at /app/eval and imports the app package
-directly, since the container's working directory is /app.
-
-Run with: docker compose exec backend python eval/run_eval.py
+Run with: python -m eval.run_confidence_check
 """
 import asyncio
 import json
@@ -21,7 +17,7 @@ EVAL_DIR = Path(__file__).parent
 
 
 async def run():
-    golden = json.loads((EVAL_DIR / "golden_dataset.json").read_text())
+    golden = json.loads((EVAL_DIR / "golden_set.json").read_text())
     trap = json.loads((EVAL_DIR / "trap_set.json").read_text())
 
     async with AsyncSessionLocal() as session:
@@ -46,7 +42,7 @@ async def run():
         print(f"\n{'='*70}\nSUMMARY\n{'='*70}")
         print(f"Golden set: min={min(valid_golden):.3f}  max={max(valid_golden):.3f}  avg={sum(valid_golden)/len(valid_golden):.3f}")
         print(f"Trap set:   min={min(valid_trap):.3f}  max={max(valid_trap):.3f}  avg={sum(valid_trap)/len(valid_trap):.3f}")
-        print(f"\nLook for a threshold that sits between the two ranges above.")
+        print(f"\nLook for a threshold value that sits between the two ranges above.")
 
 
 if __name__ == "__main__":

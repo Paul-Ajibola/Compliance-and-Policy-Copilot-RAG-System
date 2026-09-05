@@ -1,0 +1,17 @@
+[
+  {"question": "How long must employee personnel records be retained after termination?", "expected_answer_hint": "7 years post-termination", "source_doc": "Data Retention and Privacy Policy"},
+  {"question": "What is the retention period for customer transaction records?", "expected_answer_hint": "5 years", "source_doc": "Data Retention and Privacy Policy"},
+  {"question": "Within how many days must a data access request be fulfilled?", "expected_answer_hint": "30 calendar days", "source_doc": "Data Retention and Privacy Policy"},
+  {"question": "Who must disclosures about conflicts of interest be submitted to?", "expected_answer_hint": "manager and Human Resources", "source_doc": "Employee Code of Conduct"},
+  {"question": "What happens on a first occurrence of harassment or discrimination?", "expected_answer_hint": "formal investigation; suspension pending outcome", "source_doc": "Employee Code of Conduct"},
+  {"question": "What is the disciplinary consequence for falsifying records?", "expected_answer_hint": "termination", "source_doc": "Employee Code of Conduct"},
+  {"question": "What is the annual equipment stipend for an individual contributor working remotely?", "expected_answer_hint": "$500", "source_doc": "Remote Work Policy"},
+  {"question": "Who must approve equipment purchases for Director-level remote employees?", "expected_answer_hint": "VP", "source_doc": "Remote Work Policy"},
+  {"question": "What security requirement applies to all remote employees' devices?", "expected_answer_hint": "VPN and full-disk encryption", "source_doc": "Remote Work Policy"},
+  {"question": "What contract value requires CFO approval for a vendor?", "expected_answer_hint": "over $100,000", "source_doc": "Vendor Management Policy"},
+  {"question": "What due diligence is required for Tier 2 vendors?", "expected_answer_hint": "standard due-diligence questionnaire at onboarding", "source_doc": "Vendor Management Policy"},
+  {"question": "How much notice is required to terminate a vendor contract for cause?", "expected_answer_hint": "30 days written notice", "source_doc": "Vendor Management Policy"},
+  {"question": "Within how many days of travel must receipts be submitted for reimbursement?", "expected_answer_hint": "14 days", "source_doc": "travel reimbursement notes"},
+  {"question": "What reimbursement amount requires director sign-off?", "expected_answer_hint": "over $500", "source_doc": "travel reimbursement notes"},
+  {"question": "What is required before booking international travel?", "expected_answer_hint": "pre-approval from the VP of the employee's department", "source_doc": "travel reimbursement notes"}
+]
