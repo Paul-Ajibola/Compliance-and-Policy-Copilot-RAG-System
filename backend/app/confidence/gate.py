@@ -17,7 +17,7 @@ from app.retrieval.pipeline import retrieve
 # roughly negative for irrelevant pairs, positive for relevant ones, but
 # the exact useful cutoff can only be determined by looking at real scores.
 # Starting placeholder; expect to move this after running the check script.
-CONFIDENCE_THRESHOLD = 0.0
+CONFIDENCE_THRESHOLD = 1.0
 
 
 @dataclass

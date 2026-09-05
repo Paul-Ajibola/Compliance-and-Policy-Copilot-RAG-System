@@ -4,11 +4,7 @@ pipeline and prints the top reranked score for each — this is what lets
 you pick CONFIDENCE_THRESHOLD in app/confidence/gate.py based on real
 numbers, rather than guessing blind.
 
-This script lives in eval/ (repo root), NOT inside backend/app/ — it's
-mounted into the container at /app/eval and imports the app package
-directly, since the container's working directory is /app.
-
-Run with: docker compose exec backend python eval/run_eval.py
+Run with: docker compose exec backend python -m eval.run_eval
 """
 import asyncio
 import json
@@ -16,6 +12,7 @@ from pathlib import Path
 
 from app.db.session import AsyncSessionLocal
 from app.retrieval.pipeline import retrieve
+from app.confidence.gate import CONFIDENCE_THRESHOLD
 
 EVAL_DIR = Path(__file__).parent
 
@@ -43,10 +40,16 @@ async def run():
 
         valid_golden = [s for s in golden_scores if s is not None]
         valid_trap = [s for s in trap_scores if s is not None]
+
         print(f"\n{'='*70}\nSUMMARY\n{'='*70}")
         print(f"Golden set: min={min(valid_golden):.3f}  max={max(valid_golden):.3f}  avg={sum(valid_golden)/len(valid_golden):.3f}")
         print(f"Trap set:   min={min(valid_trap):.3f}  max={max(valid_trap):.3f}  avg={sum(valid_trap)/len(valid_trap):.3f}")
-        print(f"\nLook for a threshold that sits between the two ranges above.")
+
+        golden_correct = sum(1 for s in valid_golden if s >= CONFIDENCE_THRESHOLD)
+        trap_correct = sum(1 for s in valid_trap if s < CONFIDENCE_THRESHOLD)
+        print(f"\nAt threshold={CONFIDENCE_THRESHOLD}:")
+        print(f"  Golden set correctly ANSWERED: {golden_correct}/{len(valid_golden)} ({100*golden_correct/len(valid_golden):.0f}%)")
+        print(f"  Trap set correctly REFUSED:    {trap_correct}/{len(valid_trap)} ({100*trap_correct/len(valid_trap):.0f}%)")
 
 
 if __name__ == "__main__":
