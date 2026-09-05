@@ -6,6 +6,8 @@ import logging
 class Settings(BaseSettings):
     environment: str = "local"
     database_url: str
+    gemini_api_key: str
+    gemini_model: str = "gemini-2.5-flash"
 
     postgres_user: str = "postgres"
     postgres_password: str = "postgres"

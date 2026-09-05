@@ -22,7 +22,7 @@ async def bm25_search(session: AsyncSession, query: str, top_k: int = 10) -> lis
     """
     result = await session.execute(
         text(
-            "SELECT id, chunk_index, text, chunk_type, "
+            "SELECT id, chunk_index, text, chunk_type, heading_path, "
             "ts_rank(search_vector, to_tsquery('english', replace(plainto_tsquery('english', :q)::text, ' & ', ' | '))) AS rank "
             "FROM chunks "
             "WHERE search_vector @@ to_tsquery('english', replace(plainto_tsquery('english', :q)::text, ' & ', ' | ')) "

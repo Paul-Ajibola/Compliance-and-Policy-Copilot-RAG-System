@@ -18,7 +18,7 @@ async def dense_search(session: AsyncSession, query: str, top_k: int = 10) -> li
 
     result = await session.execute(
         text(
-            "SELECT id, chunk_index, text, chunk_type, "
+            "SELECT id, chunk_index, text, chunk_type, heading_path, " 
             "embedding <=> CAST(:qvec AS vector) AS distance "
             "FROM chunks "
             "WHERE embedding IS NOT NULL "
