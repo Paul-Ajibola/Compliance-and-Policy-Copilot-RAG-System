@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     database_url: str
     gemini_api_key: str
     gemini_model: str = "gemini-3.6-flash"
+    groq_api_key: str
+    groq_model: str = "llama-3.3-70b-versatile"
+    
 
     postgres_user: str = "postgres"
     postgres_password: str = "postgres"
