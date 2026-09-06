@@ -1,0 +1,164 @@
+{
+  "What is the retention period for customer transaction records?": {
+    "question": "What is the retention period for customer transaction records?",
+    "expected_answer": "5 years.",
+    "generated_answer": "The retention period for customer transaction records is 5 years [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer correctly states the 5\u2011year period supported by passage 1, directly addresses the question, but only one of the five retrieved passages is actually needed for the answer."
+  },
+  "Within how many days must a data access request be fulfilled?": {
+    "question": "Within how many days must a data access request be fulfilled?",
+    "expected_answer": "Within 30 calendar days of verified receipt.",
+    "generated_answer": "A data access request must be fulfilled within 30 calendar days of verified receipt [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage 1 and directly answers the question, but only one of the five retrieved passages is actually relevant to the query."
+  },
+  "What is the retention period and legal basis for employee personnel records?": {
+    "question": "What is the retention period and legal basis for employee personnel records?",
+    "expected_answer": "7 years post-termination, based on Labor Code \u00a71198.5.",
+    "generated_answer": "The retention period for employee personnel records is 7 years post-termination, and the legal basis is Labor Code \u00a71198.5 [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question; only that passage is useful while the others do not contribute."
+  },
+  "How long does the organization have to fulfill a Data Subject Right to Access request?": {
+    "question": "How long does the organization have to fulfill a Data Subject Right to Access request?",
+    "expected_answer": "Within 30 calendar days of verified receipt.",
+    "generated_answer": "The organization must fulfill a Data Subject Right to Access request within 30 calendar days of receiving verified receipt of the request [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages is actually relevant to the query."
+  },
+  "Within what timeframe must suspected policy violations be reported to the Compliance team?": {
+    "question": "Within what timeframe must suspected policy violations be reported to the Compliance team?",
+    "expected_answer": "Within 48 hours of discovery.",
+    "generated_answer": "The timeframe for reporting suspected policy violations depends on the specific policy:\n\n* **Data Retention and Privacy Policy:** Suspected violations must be reported to the Compliance team within 48 hours of discovery [1].\n* **Anti-Bribery Compliance Policy:** Suspected potential violations must be reported immediately to the Chief Compliance Officer or via the compliance hotline [2].",
+    "faithfulness": 5,
+    "answer_relevancy": 4,
+    "context_relevance": 2,
+    "reasoning": "Answer is fully supported by passages but adds unnecessary policy detail; only one of the five retrieved passages directly answers the specific timeframe question."
+  },
+  "What is the required retention period and disposal method for security incident reports?": {
+    "question": "What is the required retention period and disposal method for security incident reports?",
+    "expected_answer": "10 years retention; disposal via Secure shred / crypto-erase.",
+    "generated_answer": "Security incident reports must be retained for 10 years [2] and disposed of using secure shredding or crypto-erase methods [2]. \n\nAdditionally, forensic image files, system log files, and incident records generated during an investigation must be retained for a minimum of 36 months [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported and directly answers the question, but only one of the five retrieved passages is actually needed for the response."
+  },
+  "How long must marketing consent logs be retained following withdrawal?": {
+    "question": "How long must marketing consent logs be retained following withdrawal?",
+    "expected_answer": "3 years post-withdrawal.",
+    "generated_answer": "Marketing consent logs must be retained for 3 years following withdrawal [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages was actually relevant."
+  },
+  "What is the required disposal method for vendor due-diligence files?": {
+    "question": "What is the required disposal method for vendor due-diligence files?",
+    "expected_answer": "Secure shred.",
+    "generated_answer": "The required disposal method for vendor due-diligence files is secure shredding [1].",
+    "faithfulness": 1,
+    "answer_relevancy": 5,
+    "context_relevance": 1,
+    "reasoning": "Answer asserts secure shredding but no passage mentions disposal method for vendor due\u2011diligence files; while it addresses the question, none of the retrieved texts support the claim."
+  },
+  "Who must disclosures about conflicts of interest be submitted to?": {
+    "question": "Who must disclosures about conflicts of interest be submitted to?",
+    "expected_answer": "Manager and Human Resources prior to engaging in the activity.",
+    "generated_answer": "Disclosures regarding conflicts of interest must be submitted to the employee's manager and to Human Resources [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages is actually relevant."
+  },
+  "What happens on a first occurrence of harassment or discrimination?": {
+    "question": "What happens on a first occurrence of harassment or discrimination?",
+    "expected_answer": "Formal investigation; suspension pending outcome.",
+    "generated_answer": "On a first occurrence of harassment or discrimination, the organization initiates a formal investigation and issues a suspension pending the outcome [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only that passage out of the five retrieved is actually relevant."
+  },
+  "What is the disciplinary consequence for falsifying records?": {
+    "question": "What is the disciplinary consequence for falsifying records?",
+    "expected_answer": "Termination.",
+    "generated_answer": "The disciplinary consequence for falsification of records is termination of employment, which applies to both a first occurrence and repeat occurrences [2]. Specifically regarding corporate expenses, fraudulent submissions such as the falsification of receipts result in immediate termination, full financial recovery through payroll offset, and potential civil or criminal legal action [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passages [1] and [2] and directly answers the question; only those two passages are directly useful, the others are not relevant to falsifying records."
+  },
+  "To whom must employees submit conflict of interest disclosures, and when must they be submitted?": {
+    "question": "To whom must employees submit conflict of interest disclosures, and when must they be submitted?",
+    "expected_answer": "To the employee's manager and Human Resources prior to engaging in the activity.",
+    "generated_answer": "Employees must submit conflict of interest disclosures to both their manager and to Human Resources [1]. These disclosures must be submitted before the employee engages in the activity in question [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly addresses both parts of the question, but only one of the five retrieved passages was actually relevant."
+  },
+  "What is the standard disciplinary response for a first occurrence of tardiness or attendance issues?": {
+    "question": "What is the standard disciplinary response for a first occurrence of tardiness or attendance issues?",
+    "expected_answer": "Verbal warning.",
+    "generated_answer": "The standard disciplinary response for a first occurrence of tardiness or attendance issues is a verbal warning [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "Answer is fully supported and directly addresses the question, but only a minority of the retrieved passages (2 of 5) are pertinent to the query."
+  },
+  "What standard disciplinary action is required for a first occurrence of falsification of records?": {
+    "question": "What standard disciplinary action is required for a first occurrence of falsification of records?",
+    "expected_answer": "Termination.",
+    "generated_answer": "The standard disciplinary action required for a first occurrence of falsification of records is termination [1]. Human Resources must be consulted before any termination decision is finalized [3].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer correctly cites termination and HR consultation from the passages, directly answers the question, but only two of the five retrieved passages are actually relevant."
+  },
+  "Which department must be consulted before any suspension or termination decision is finalized?": {
+    "question": "Which department must be consulted before any suspension or termination decision is finalized?",
+    "expected_answer": "Human Resources.",
+    "generated_answer": "Human Resources must be consulted before any suspension or termination decision is finalized [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage 1 and directly answers the question, but only one of the five retrieved passages is actually useful for this query."
+  },
+  "What are the three channels through which employees can report a violation of the Code of Conduct?": {
+    "question": "What are the three channels through which employees can report a violation of the Code of Conduct?",
+    "expected_answer": "Their manager, Human Resources, or the confidential ethics hotline.",
+    "generated_answer": "Employees can report a violation of the Code of Conduct through the following three channels:\n\n1. Their manager [1]\n2. Human Resources [1]\n3. The confidential ethics hotline [1]",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer exactly matches the three reporting channels stated in passage [1]; it fully addresses the question, but only one of the five retrieved passages provides the needed information."
+  },
+  "What is the standard disciplinary response for a repeat occurrence of conflict of interest non-disclosure?": {
+    "question": "What is the standard disciplinary response for a repeat occurrence of conflict of interest non-disclosure?",
+    "expected_answer": "Suspension.",
+    "generated_answer": "The standard disciplinary response for a repeat occurrence of conflict of interest non-disclosure is suspension [1]. Additionally, Human Resources must be consulted before any suspension decision is finalized, and management retains the discretion to escalate the disciplinary response based on severity [2].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "Answer correctly states suspension and cites supporting passages, but only two of the five retrieved passages are actually pertinent."
+  },
+  "What security requirement applies to all remote employees' devices?": {
+    "question": "What security requirement applies to all remote employees' devices?",
+    "expected_answer": "VPN and full-disk encryption.",
+    "generated_answer": "All remote employees must enable full-disk encryption on any device used for work purposes and must use company-issued VPN software [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages is actually useful for the answer."
+  }
+}

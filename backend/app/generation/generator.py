@@ -5,7 +5,6 @@ gate and the API route: this module only knows how to talk to the LLM,
 nothing about HTTP or retrieval.
 """
 from google import genai
-
 from app.config import settings
 from app.generation.prompts import build_prompt
 
@@ -26,7 +25,6 @@ async def stream_answer(question: str, context_chunks: list[dict]):
     """
     client = get_client()
     prompt = build_prompt(question, context_chunks)
-
     stream = await client.aio.models.generate_content_stream(
         model=settings.gemini_model,
         contents=prompt,
@@ -34,6 +32,21 @@ async def stream_answer(question: str, context_chunks: list[dict]):
     async for chunk in stream:
         if chunk.text:
             yield chunk.text
+
+
+async def generate_answer_full(question: str, context_chunks: list[dict]) -> str:
+    """
+    Non-streaming version of the same generation call, used by the
+    offline LLM-as-judge evaluation script (eval/llm_judge.py), which
+    needs one complete answer string rather than a live token stream.
+    """
+    client = get_client()
+    prompt = build_prompt(question, context_chunks)
+    response = await client.aio.models.generate_content(
+        model=settings.gemini_model,
+        contents=prompt,
+    )
+    return response.text
 
 
 def build_citations(context_chunks: list[dict]) -> list[dict]:
@@ -51,4 +64,3 @@ def build_citations(context_chunks: list[dict]) -> list[dict]:
             "chunk_type": chunk.get("chunk_type"),
         })
     return citations
-
