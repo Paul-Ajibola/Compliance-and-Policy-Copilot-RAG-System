@@ -4,6 +4,9 @@ pipeline and prints the top reranked score for each — this is what lets
 you pick CONFIDENCE_THRESHOLD in app/confidence/gate.py based on real
 numbers, rather than guessing blind.
 
+Processes in small batches with a pause between them to avoid sustained
+memory pressure on resource-constrained machines.
+
 Run with: docker compose exec backend python -m eval.run_eval
 """
 import asyncio
@@ -15,6 +18,23 @@ from app.retrieval.pipeline import retrieve
 from app.confidence.gate import CONFIDENCE_THRESHOLD
 
 EVAL_DIR = Path(__file__).parent
+BATCH_SIZE = 10
+PAUSE_SECONDS = 3
+
+
+async def score_items(session, items, label):
+    scores = []
+    for i, item in enumerate(items):
+        results = await retrieve(session, item["question"], final_k=1)
+        score = results[0]["rerank_score"] if results else None
+        scores.append(score)
+        print(f"  {score:>8.3f}  {item['question']}")
+
+        if (i + 1) % BATCH_SIZE == 0 and (i + 1) < len(items):
+            print(f"  ... pausing {PAUSE_SECONDS}s after {i + 1}/{len(items)} ({label}) ...")
+            await asyncio.sleep(PAUSE_SECONDS)
+
+    return scores
 
 
 async def run():
@@ -22,21 +42,11 @@ async def run():
     trap = json.loads((EVAL_DIR / "trap_set.json").read_text())
 
     async with AsyncSessionLocal() as session:
-        print(f"\n{'='*70}\nGOLDEN SET (should score HIGH)\n{'='*70}")
-        golden_scores = []
-        for item in golden:
-            results = await retrieve(session, item["question"], final_k=1)
-            score = results[0]["rerank_score"] if results else None
-            golden_scores.append(score)
-            print(f"  {score:>8.3f}  {item['question']}")
+        print(f"\n{'='*70}\nGOLDEN SET (should score HIGH) — {len(golden)} questions\n{'='*70}")
+        golden_scores = await score_items(session, golden, "golden")
 
-        print(f"\n{'='*70}\nTRAP SET (should score LOW)\n{'='*70}")
-        trap_scores = []
-        for item in trap:
-            results = await retrieve(session, item["question"], final_k=1)
-            score = results[0]["rerank_score"] if results else None
-            trap_scores.append(score)
-            print(f"  {score:>8.3f}  [{item['trap_type']}] {item['question']}")
+        print(f"\n{'='*70}\nTRAP SET (should score LOW) — {len(trap)} questions\n{'='*70}")
+        trap_scores = await score_items(session, trap, "trap")
 
         valid_golden = [s for s in golden_scores if s is not None]
         valid_trap = [s for s in trap_scores if s is not None]
@@ -54,3 +64,5 @@ async def run():
 
 if __name__ == "__main__":
     asyncio.run(run())
+
+
