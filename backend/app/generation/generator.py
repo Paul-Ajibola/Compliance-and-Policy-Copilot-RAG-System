@@ -62,5 +62,6 @@ def build_citations(context_chunks: list[dict]) -> list[dict]:
             "chunk_index": chunk.get("chunk_index"),
             "heading_path": chunk.get("heading_path"),
             "chunk_type": chunk.get("chunk_type"),
+            "text": chunk.get("text"),   # for the frontend to display source code
         })
     return citations

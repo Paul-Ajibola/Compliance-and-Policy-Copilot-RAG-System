@@ -9,6 +9,8 @@ from app.api.query import router as query_router
 app = FastAPI(title="Compliance & Policy Copilot")
 
 app.include_router(query_router)
+app.include_router(feedback_router)
+
 
 
 # the health status API check
