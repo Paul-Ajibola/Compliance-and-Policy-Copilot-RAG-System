@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     postgres_password: str = "postgres"
     postgres_db: str = "compliance_copilot"
 
+
     # write rules telling Settings() how to operate
     model_config = SettingsConfigDict(
         env_file=".env.local",    # look at the files named .env.local

@@ -160,5 +160,59 @@
     "answer_relevancy": 5,
     "context_relevance": 2,
     "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages is actually useful for the answer."
+  },
+  "How long must employee personnel records be retained after termination?": {
+    "question": "How long must employee personnel records be retained after termination?",
+    "expected_answer": "7 years post-termination, based on Labor Code \u00a71198.5.",
+    "generated_answer": "Employee personnel records must be retained for 7 years post-termination [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported and directly answers the question, but only one of the five retrieved passages is actually relevant."
+  },
+  "What is the annual equipment stipend for an individual contributor working remotely?": {
+    "question": "What is the annual equipment stipend for an individual contributor working remotely?",
+    "expected_answer": "$500.",
+    "generated_answer": "The annual equipment stipend for an individual contributor working remotely is $500, which requires manager approval [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages provides the needed information."
+  },
+  "Who must approve equipment purchases for Director-level remote employees?": {
+    "question": "Who must approve equipment purchases for Director-level remote employees?",
+    "expected_answer": "VP.",
+    "generated_answer": "For Director-level remote employees, equipment purchases require approval from a VP [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "Answer is fully supported and directly answers the question, but only one of the five retrieved passages is actually useful for this answer."
+  },
+  "How long is the probationary period that full-time employees must complete before becoming eligible for remote work?": {
+    "question": "How long is the probationary period that full-time employees must complete before becoming eligible for remote work?",
+    "expected_answer": "90-day probationary period.",
+    "generated_answer": "Full-time employees must complete a 90-day probationary period before they become eligible for remote work [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported by passage [1] and directly answers the question, but only one of the five retrieved passages is actually relevant."
+  },
+  "What is the annual equipment stipend amount for a Director+ role level?": {
+    "question": "What is the annual equipment stipend amount for a Director+ role level?",
+    "expected_answer": "$1,200.",
+    "generated_answer": "The annual equipment stipend amount for a Director+ role level is $1,200 [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer is fully supported and directly answers the question; only passages 1 (and marginally 2) are relevant, while the others do not pertain to the equipment stipend."
+  },
+  "Whose approvals are required for contracts valued between $10,000 and $100,000?": {
+    "question": "Whose approvals are required for contracts valued between $10,000 and $100,000?",
+    "expected_answer": "VP and Procurement.",
+    "generated_answer": "For contracts valued between $10,000 and $100,000, approvals are required from a Vice President (VP) and Procurement [1].",
+    "faithfulness": 5,
+    "answer_relevancy": 5,
+    "context_relevance": 2,
+    "reasoning": "The answer correctly states VP and Procurement as required approvers per passage 1, directly addresses the question, but only a minority of the retrieved passages (1 and 5) are relevant."
   }
 }
