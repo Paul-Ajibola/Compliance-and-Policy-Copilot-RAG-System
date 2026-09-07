@@ -14,7 +14,7 @@ wheels/
 
 
 # the compliance policy documents
-data/
+
 
 # frontend
 node_modules/
