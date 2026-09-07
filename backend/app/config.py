@@ -26,6 +26,11 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+if settings.database_url.startswith("postgresql://"):
+    settings.database_url = settings.database_url.replace(
+        "postgresql://", "postgresql+asyncpg://", 1
+    )
+
 
 # logging
 logger = logging.getLogger(__name__)
