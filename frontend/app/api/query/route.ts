@@ -1,7 +1,8 @@
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const backendUrl = process.env.BACKEND_INTERNAL_URL || "http://localhost:8000";
+  const rawUrl = process.env.BACKEND_INTERNAL_URL || "http://localhost:8000";
+  const backendUrl = rawUrl.startsWith("http") ? rawUrl : `http://${rawUrl}`;
   const body = await req.text();
 
   const backendRes = await fetch(`${backendUrl}/query`, {
