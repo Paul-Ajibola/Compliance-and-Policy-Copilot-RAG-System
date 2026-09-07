@@ -1,0 +1,47 @@
+databases:
+  - name: compliance-copilot-db
+    databaseName: compliance_copilot
+    user: copilot_user
+    plan: free
+    region: ohio # US region; change to oregon/frankfurt/singapore if needed
+
+services:
+  # ---- Backend (FastAPI) ----
+  - type: web
+    name: compliance-copilot-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: ohio
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: compliance-copilot-db
+          property: connectionString
+      - key: GEMINI_API_KEY
+        sync: false # set manually in Render dashboard (secret)
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: GROQ_API_KEY
+        sync: false # set manually in Render dashboard (secret)
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+
+  # ---- Frontend (Next.js) ----
+  - type: web
+    name: compliance-copilot-frontend
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: free
+    region: ohio
+    envVars:
+      - key: BACKEND_INTERNAL_URL
+        fromService:
+          type: web
+          name: compliance-copilot-backend
+          property: hostport
