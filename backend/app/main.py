@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from app.config import settings
 from app.db.session import check_db_connection
 from app.api.query import router as query_router
-
+from app.api.feedback import router as feedback_router
 
 
 # instantiate FastAPI
