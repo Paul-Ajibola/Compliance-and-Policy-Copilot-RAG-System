@@ -44,4 +44,4 @@ services:
         fromService:
           type: web
           name: compliance-copilot-backend
-          property: hostport
+          property: host
