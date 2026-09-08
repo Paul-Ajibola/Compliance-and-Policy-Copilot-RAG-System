@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
+/**
+ * next/font/google downloads and self-hosts these fonts at build time
+ * (not a runtime request to Google's CDN — better privacy and
+ * performance than a plain <link> tag). Each call generates a CSS
+ * custom property matching the `variable` name given below.
+ */
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
