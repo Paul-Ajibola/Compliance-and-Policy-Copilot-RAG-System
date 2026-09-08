@@ -1,4 +1,15 @@
 @import "tailwindcss";
+/*
+ * Design tokens for the Compliance & Policy Copilot.
+ *
+ * Intentionally NOT the typical "warm cream + terracotta" AI-app
+ * palette. This tool is a compliance reference desk, not a casual
+ * chat app — the palette leans toward an official ledger/legal-brief
+ * feel: cool paper background, ink-navy text, and two distinct
+ * "stamp" colors (verified vs. escalated) that read like an actual
+ * rubber-stamp trust indicator rather than a generic success/error
+ * color pair.
+ */
 
 :root {
   --color-ink: #1b2a33;
